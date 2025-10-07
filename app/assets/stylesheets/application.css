@@ -112,7 +112,7 @@ body {
 /* 各エリアのスタイル */
 #header {
   grid-area: header;
-  background-color: #004aad;
+  background-color:#98fb98;
   color: white;
   padding: 1rem;
 }
