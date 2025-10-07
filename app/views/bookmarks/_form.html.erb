@@ -1,22 +1,22 @@
-<% if @bookmark.errors.any? %>
-  <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 15px;">
-    <h4><%= @bookmark.errors.count %>件のエラーがあります:</h4>
+<% if bookmark.errors.any? %>
+  <div class="alert">
+    <h4><%= bookmark.errors.count %>件のエラーがあります:</h4>
     <ul>
-      <% @bookmark.errors.full_messages.each do |msg| %>
+      <% bookmark.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
-<%= form_with(model: @bookmark) do |f| %>
+<%= form_with(model: bookmark) do |f| %>
   <p>
-    <%= f.label :title %><br>
+    <%= f.label :title, "タイトル" %><br>
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <%= f.label :url %><br>
+    <%= f.label :url, "URL" %><br>
     <%= f.text_field :url %>
   </p>
 

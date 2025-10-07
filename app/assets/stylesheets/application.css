@@ -78,6 +78,7 @@ button:hover {
   margin: 15px 0;
 }
 
+/* 既存のアラートデザイン */
 .alert {
   background: #ffe6e6;
   color: #b32d2d;
@@ -87,3 +88,62 @@ button:hover {
   border-radius: 4px;
   margin: 15px 0;
 }
+
+/* ===== レイアウト全体 ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f6f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* コンテナ全体を2カラム化 */
+#container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* 各エリアのスタイル */
+#header {
+  grid-area: header;
+  background-color: #004aad;
+  color: white;
+  padding: 1rem;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #e4e7eb;
+  padding: 1rem;
+}
+
+#content {
+  grid-area: content;
+  background-color: white;
+  padding: 2rem;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* リンクなどの調整 */
+a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+

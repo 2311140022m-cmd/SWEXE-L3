@@ -10,25 +10,36 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <!-- flashメッセージ表示部分 -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div id="container">
+      <div id="header">
+        <%= render "shared/header" %>
+      </div>
 
-    <!-- 各ビューがここに描画される -->
-    <%= yield %>
+      <div id="sidebar">
+        <%= render "shared/sidebar" %>
+      </div>
+
+      <div id="content">
+        <!-- フラッシュメッセージ（通知やアラート） -->
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <!-- 各ビューの内容 -->
+        <%= yield %>
+      </div>
+
+      <div id="footer">
+        <%= render "shared/footer" %>
+      </div>
+    </div>
   </body>
 </html>
-
